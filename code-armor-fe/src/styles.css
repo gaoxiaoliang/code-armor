@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

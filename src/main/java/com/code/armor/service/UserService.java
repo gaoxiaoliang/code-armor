@@ -16,5 +16,13 @@ public class UserService {
         return repo.findByEmail(email)
                 .orElseThrow(() -> new ClientErrorException("USER_404", "User not found"));
     }
-}
 
+    public User updateUsername(String email, String username) {
+        if (username == null || username.trim().isEmpty()) {
+            throw new ClientErrorException("USERNAME_INVALID", "Username is required");
+        }
+        User user = getByEmail(email);
+        user.setUsername(username.trim());
+        return repo.save(user);
+    }
+}
