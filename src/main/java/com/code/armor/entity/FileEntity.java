@@ -2,6 +2,8 @@ package com.code.armor.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -37,6 +39,14 @@ public class FileEntity {
     private String storageName;
 
     private Long size;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private ProjectType projectType = ProjectType.UNKNOWN;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private FileStatus status = FileStatus.UPLOADED;
 
     private LocalDateTime uploadedAt = LocalDateTime.now();
 }
