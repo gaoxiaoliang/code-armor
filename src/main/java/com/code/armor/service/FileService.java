@@ -3,6 +3,8 @@ package com.code.armor.service;
 import com.code.armor.dto.FileEntityDto;
 import com.code.armor.dto.PagedResponse;
 import com.code.armor.entity.FileEntity;
+import com.code.armor.entity.FileStatus;
+import com.code.armor.entity.ProjectType;
 import com.code.armor.entity.User;
 import com.code.armor.exception.ClientIllegalArgumentException;
 import com.code.armor.exception.InternalServerErrorException;
@@ -47,8 +49,8 @@ public class FileService {
         entity.setFileName(multipartFile.getOriginalFilename());
         entity.setStorageName(uuidFileName);
         entity.setSize(multipartFile.getSize());
-        entity.setProjectType(com.code.armor.entity.ProjectType.UNKNOWN);
-        entity.setStatus(com.code.armor.entity.FileStatus.UPLOADED);
+        entity.setProjectType(null);
+        entity.setStatus(FileStatus.UPLOADED);
         fileRepository.save(entity);
     }
 

@@ -1,7 +1,7 @@
 package com.code.armor.entity;
 
 public enum ProjectType {
-    HTML,
+    PURE_HTML_JS,
     VUE,
     REACT,
     ANGULARJS,

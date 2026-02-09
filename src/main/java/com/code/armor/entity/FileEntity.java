@@ -41,12 +41,11 @@ public class FileEntity {
     private Long size;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private ProjectType projectType = ProjectType.UNKNOWN;
+    private ProjectType projectType;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private FileStatus status = FileStatus.UPLOADED;
+    private FileStatus status;
 
     private LocalDateTime uploadedAt = LocalDateTime.now();
 }
