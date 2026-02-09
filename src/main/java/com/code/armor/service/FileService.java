@@ -47,6 +47,8 @@ public class FileService {
         entity.setFileName(multipartFile.getOriginalFilename());
         entity.setStorageName(uuidFileName);
         entity.setSize(multipartFile.getSize());
+        entity.setProjectType(com.code.armor.entity.ProjectType.UNKNOWN);
+        entity.setStatus(com.code.armor.entity.FileStatus.UPLOADED);
         fileRepository.save(entity);
     }
 
@@ -74,4 +76,3 @@ public class FileService {
         return new PagedResponse<>(fileEntityDtoList, fileEntityPage.getTotalElements());
     }
 }
-
