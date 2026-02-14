@@ -10,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,11 +17,10 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "files")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class FileEntity {
+public class App {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,11 +39,13 @@ public class FileEntity {
     private Long size;
 
     @Enumerated(EnumType.STRING)
-    private ProjectType projectType;
+    private AppType appType;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private FileStatus status;
+    private AppStatus status;
+
+    private String siteURL;
 
     private LocalDateTime uploadedAt = LocalDateTime.now();
 }

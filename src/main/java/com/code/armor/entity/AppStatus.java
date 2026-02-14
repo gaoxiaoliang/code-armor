@@ -1,6 +1,6 @@
 package com.code.armor.entity;
 
-public enum FileStatus {
+public enum AppStatus {
     UPLOADED,
 
     COMPILING,

@@ -26,14 +26,14 @@ spring:
 
 logging:
   level:
-    root: info
+    root: debug
 
 springdoc:
   api-docs:
-    enabled: false
+    enabled: true
     path: /v3/api-docs
   swagger-ui:
-    enabled: false
+    enabled: true
     path: /swagger-ui.html
 
 jwt:
@@ -43,3 +43,7 @@ jwt:
 app:
   upload:
     dir: ${CODE_ARMOR_UPLOAD_DIR}
+
+firebase:
+  token: ${CODE_ARMOR_FIREBASE_TOKEN}
+  project: ${CODE_ARMOR_FIREBASE_PROJECT}
